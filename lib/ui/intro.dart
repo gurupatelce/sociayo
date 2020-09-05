@@ -4,12 +4,12 @@ import 'package:base_test/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class Login extends StatefulWidget {
+class Intro extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _IntroState createState() => _IntroState();
 }
 
-class _LoginState extends State<Login> {
+class _IntroState extends State<Intro> {
   Widget _fieldPassword(String text, bool secure) {
     return Material(
       elevation: 10.0,
@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
     locator<NavigationService>().navigateTo(Routes.signUp);
   }
 
-  Widget makeButton() {
+  Widget makeButton(String text) {
     return Container(
       height: 45,
       child: Stack(
@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              'LOG IN',
+              text,
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
@@ -85,54 +85,26 @@ class _LoginState extends State<Login> {
             children: [
               Image.asset(
                 'assets/images/transparent.png',
-                height: 200,
-                width: 200,
+                height: 300,
+                width: 300,
               ),
-              _fieldPassword("USERNAME / EMAIL", false),
               SizedBox(
                 height: 15,
               ),
-              _fieldPassword("PASSWORD", true),
-              SizedBox(
-                height: 25,
-              ),
               GestureDetector(
-                // onTap: _navigate,
-                child: makeButton(),
+                onTap: () {
+                  locator<NavigationService>().navigateTo(Routes.signUp);
+                },
+                child: makeButton('SIGN UP'),
               ),
               SizedBox(
                 height: 20,
               ),
-              RichText(
-                text: TextSpan(
-                  // style: DefaultTextStyle.of(context).style,
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: 'Don’t have an account? Click to',
-                        style: TextStyle(color: Colors.black, fontSize: 14)),
-                    TextSpan(
-                        text: ' create a new account.',
-                        style: TextStyle(
-                            color: ColorConstants.colorBlue, fontSize: 14)),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              RichText(
-                text: TextSpan(
-                  // style: DefaultTextStyle.of(context).style,
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: 'Or Did you  ',
-                        style: TextStyle(color: Colors.black, fontSize: 14)),
-                    TextSpan(
-                        text: 'Forget Your Password?',
-                        style: TextStyle(
-                            color: ColorConstants.colorBlue, fontSize: 14)),
-                  ],
-                ),
+              GestureDetector(
+                onTap: () {
+                  locator<NavigationService>().navigateTo(Routes.login);
+                },
+                child: makeButton('SIGN IN'),
               )
             ],
           ),

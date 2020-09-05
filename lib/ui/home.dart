@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:base_test/app/locator.dart';
 import 'package:base_test/app/router.gr.dart';
 import 'package:flutter/material.dart';
@@ -10,15 +12,21 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   void _nav() {
-    locator<NavigationService>().navigateTo(Routes.login);
+    locator<NavigationService>().replaceWith(Routes.intro);
   }
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: _nav,
-        child: Container(
-          color: Colors.red,
-        ));
+    Timer(Duration(seconds: 3), () => _nav());
+    return Container(
+      color: Colors.white,
+      child: Center(
+        child: Image.asset(
+          'assets/images/transparent.png',
+          height: 250,
+          width: 250,
+        ),
+      ),
+    );
   }
 }

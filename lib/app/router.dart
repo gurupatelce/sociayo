@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:base_test/ui/intro.dart';
 import 'package:base_test/ui/login.dart';
+import 'package:base_test/ui/signup.dart';
 
 import '../ui/home.dart';
 
@@ -7,6 +9,8 @@ import '../ui/home.dart';
   routes: <AutoRoute>[
     MaterialRoute(page: Home, initial: true),
     MaterialRoute(page: Login),
+    MaterialRoute(page: SignUp),
+    MaterialRoute(page: Intro),
   ],
 )
 class $Router {}
