@@ -1,5 +1,7 @@
 import 'package:base_test/app/locator.dart';
 import 'package:base_test/utils/constants.dart';
+import 'package:base_test/utils/localization/localization.dart';
+import 'package:base_test/widgets/base_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -8,6 +10,7 @@ import 'app/router.gr.dart';
 
 void main() {
   setUpLocator();
+  setUpDialogUi();
   runApp(MyApp());
 }
 
@@ -33,6 +36,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: [
         DefaultMaterialLocalizations.delegate,
         DefaultWidgetsLocalizations.delegate,
+        const MyLocalizationsDelegate()
       ],
       supportedLocales: [
         const Locale('en', ''),

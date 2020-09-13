@@ -33,10 +33,6 @@ class _IntroState extends State<Intro> {
     );
   }
 
-  void _navigate() {
-    locator<NavigationService>().navigateTo(Routes.signUp);
-  }
-
   Widget makeButton(String text) {
     return Container(
       height: 45,

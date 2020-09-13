@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   void _nav() {
-    locator<NavigationService>().replaceWith(Routes.intro);
+    locator<NavigationService>().replaceWith(Routes.languageSelection);
   }
 
   @override

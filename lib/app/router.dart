@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:base_test/ui/forgot_password.dart';
 import 'package:base_test/ui/intro.dart';
+import 'package:base_test/ui/language_selection/lanuguage_selection.dart';
 import 'package:base_test/ui/login.dart';
+import 'package:base_test/ui/login_otp.dart';
 import 'package:base_test/ui/signup.dart';
 
 import '../ui/home.dart';
@@ -11,6 +14,9 @@ import '../ui/home.dart';
     MaterialRoute(page: Login),
     MaterialRoute(page: SignUp),
     MaterialRoute(page: Intro),
+    MaterialRoute(page: ForgotPassword),
+    MaterialRoute(page: LoginOtp),
+    MaterialRoute(page: LanguageSelection),
   ],
 )
 class $Router {}
