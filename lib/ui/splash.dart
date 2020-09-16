@@ -5,14 +5,14 @@ import 'package:base_test/app/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class Home extends StatefulWidget {
+class Splash extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _SplashState createState() => _SplashState();
 }
 
-class _HomeState extends State<Home> {
+class _SplashState extends State<Splash> {
   void _nav() {
-    locator<NavigationService>().replaceWith(Routes.languageSelection);
+    locator<NavigationService>().replaceWith(Routes.intro);
   }
 
   @override
