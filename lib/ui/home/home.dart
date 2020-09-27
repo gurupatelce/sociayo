@@ -31,17 +31,21 @@ class _HomeState extends State<Home> {
       floatingActionButton: new FloatingActionButton(
         onPressed: () {},
         tooltip: 'Increment',
-        child: new Icon(Icons.add),
+        child: new ConstrainedBox(
+          constraints: new BoxConstraints.expand(),
+          child: new Image.asset('assets/images/ic_add.png'),
+        ),
         elevation: 4.0,
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomAppBar(
+        elevation: 5,
         child: new Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.home),
+                icon: Image.asset('assets/images/ic_home.png'),
                 onPressed: () {
                   _updateTab(0);
                 },
@@ -49,7 +53,7 @@ class _HomeState extends State<Home> {
             ),
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.show_chart),
+                icon: Image.asset('assets/images/ic_search.png'),
                 onPressed: () {
                   _updateTab(1);
                 },
@@ -58,7 +62,7 @@ class _HomeState extends State<Home> {
             Expanded(child: new Text('')),
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.tab),
+                icon: Image.asset('assets/images/ic_chat.png'),
                 onPressed: () {
                   _updateTab(2);
                 },
@@ -66,7 +70,7 @@ class _HomeState extends State<Home> {
             ),
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.settings),
+                icon: Icon(Icons.supervised_user_circle),
                 onPressed: () {
                   _updateTab(3);
                 },

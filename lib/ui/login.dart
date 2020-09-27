@@ -145,7 +145,9 @@ class _LoginState extends State<Login> {
                   height: 25,
                 ),
                 GestureDetector(
-                  // onTap: _navigate,
+                  onTap: () {
+                    _navigate(Routes.home);
+                  },
                   child: makeButton(),
                 ),
                 SizedBox(
